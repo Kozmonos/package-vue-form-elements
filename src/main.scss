@@ -1,0 +1,19 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@each $color, $value in $theme-colors {
+  button.button-item.#{$color}:hover {
+    box-shadow: 1px 1px 4px $value;
+  }
+  button.go-button.bg-#{$color}::after {
+    background-color: ($value);
+  }
+  button.go-button.dark.bg-#{$color} {
+    background-color: (lighten($value, 6%)) !important;
+  }
+  button.go-button.light.bg-#{$color} {
+    background-color: (darken($value, 6%)) !important;
+  }
+  .custom-select .items.#{$color} div:not(.selected-item):hover {
+    background-color: lighten($value, 10%);
+  }
+}

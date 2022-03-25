@@ -4,3 +4,4 @@ package-lock.json
 vue.config.js
 .gitignore
 .vscode
+.images

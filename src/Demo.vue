@@ -1,42 +1,31 @@
 <template>
-  <div>
-    <k-select
-      v-model="selectModel"
-      :variant="variant"
-      :theme="theme"
-      :options="selectData"
-      >test</k-select
-    >
-    <k-select value="b" :options="['a', 'b', 'c']">test</k-select>
-    <k-go-button :variant="variant" :theme="theme" to="https://kozmonos.com"
-      >test</k-go-button
-    >
-    <k-go-button>Go</k-go-button>
-    <k-button :variant="variant" :theme="theme">test</k-button>
-
-    <k-input
-      v-model="testModel"
-      :variant="variant"
-      :theme="theme"
-      label="input label"
-    />
-    <k-input :theme="theme" v-model="inputModel2" label="input label" />
-    <k-textarea
-      v-model="textareaModel"
-      :variant="variant"
-      :theme="theme"
-      label="textarea label"
-      >test</k-textarea
-    >
-    <k-checkbox
-      v-model="checkboxModel"
-      :variant="variant"
-      :theme="theme"
-      id="t"
-      :value="true"
-      >test</k-checkbox
-    >
-    <k-checkbox variant="danger">test</k-checkbox>
+  <div class="main-container">
+    <template v-for="themeName in Object.keys(themes)">
+      <div :class="themeName" :key="themeName + 'input'" class="container">
+        <div
+          class="container-item"
+          :key="componentItem"
+          v-for="componentItem in Object.keys(componentList)"
+        >
+          <span class="mode-title" :class="'text-' + themeName"
+            >{{ themeName }} Mode</span
+          >
+          <component
+            :hover="hover"
+            :is="componentItem"
+            v-for="variantName in Object.keys(variants)"
+            :key="variantName + componentItem"
+            :theme="themeName"
+            class="component-item"
+            label="input label"
+            :variant="variantName"
+            v-bind="componentList[componentItem].props"
+            >{{ componentList[componentItem].slot }}</component
+          >
+          <hr :key="componentItem + 'hr'" />
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 <script>
@@ -47,27 +36,61 @@ import {
   KInput,
   KTextarea,
   KCheckbox,
-} from "./packages.js";
+} from "./main-production.js";
 export default {
   components: { KGoButton, KButton, KSelect, KInput, KTextarea, KCheckbox },
   data: () => ({
-    selectData: ["web", "cron", "one time"],
-    variant: "danger",
-    theme: "dark",
-    testModel: "test",
-
-    selectModel: "",
-    textareaModel: "",
-    inputModel2: "",
-    checkboxModel: false,
+    componentList: {
+      KGoButton: {
+        slot: "Go",
+      },
+      KButton: { slot: "button" },
+      KSelect: {
+        props: {
+          options: ["item 1", "item 2", "item 3"],
+        },
+      },
+      KInput: {},
+      KTextarea: {},
+      KCheckbox: { slot: "checkbox" },
+    },
+    themes: {
+      dark: "dark",
+      light: "light",
+    },
+    variants: {
+      primary: "primary",
+      secondary: "secondary",
+      success: "success",
+      danger: "danger",
+      warning: "warning",
+      info: "info",
+    },
   }),
 };
 </script>
-<style>
-.container {
+<style >
+.main-container {
+  display: flex;
+}
+.component-item {
+  margin-top: 10px;
+}
+
+.container-item {
   padding: 20px;
   border-radius: 10px;
-  margin-top: 20px;
-  background: rgb(32, 32, 32);
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 1px 8px #343a4014;
+}
+.light .container-item {
+  background-color: #202020;
+}
+.mode-title {
+  text-transform: capitalize;
+  font-weight: bold;
 }
 </style>

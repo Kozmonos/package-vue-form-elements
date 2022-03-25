@@ -1,10 +1,11 @@
 {
   "name": "@kozmonos/form-elements",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Vue form-elements component",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name form-elements 'src/main.js'",
+    "serve": "NODE_ENV=development vue-cli-service serve",
+    "serve:production-test": "NODE_ENV=production-test vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name form-elements 'src/main-production.js'",
     "deploy": "custom-command github/push",
     "build:dev": "vue-cli-service build --target app --name form-elements",
     "publish:major": "npm version major --no-git-tag-version;npm run deploy",
@@ -20,19 +21,19 @@
     "README.md"
   ],
   "dependencies": {
-    "@vue/cli-service": "~4.5.0",
-    "bootstrap-vue": "^2.21.2",
-    "core-js": "^3.21.1",
-    "sass": "^1.49.9",
-    "vue": "^2.6.14",
-    "vue-template-compiler": "^2.6.14"
+    "bootstrap-vue": "^2.21.2"
   },
   "devDependencies": {
+    "core-js": "^3.21.1",
+    "sass": "^1.49.9",
+    "sass-loader": "^10.2.1",
+    "@vue/cli-service": "~4.5.0",
+    "vue": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
     "@vue/cli-plugin-unit-mocha": "~4.5.13",
     "@vue/test-utils": "^1.0.3",
     "chai": "^4.1.2",
     "null-loader": "^4.0.1",
-    "sass-loader": "^10.2.1",
     "webpack": "^4.46.0"
   },
   "bugs": {

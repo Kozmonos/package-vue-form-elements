@@ -2,7 +2,6 @@ import vModel from './vModel.mixin';
 export default {
 	mixins: [vModel],
 	props: {
-
 		value: {
 			type: String,
 			default: ""
@@ -13,10 +12,7 @@ export default {
 		},
 		color: {
 			type: String
-		}, radius: {
-			type: String
 		},
-
 		required: {
 			type: Boolean,
 			default: false,

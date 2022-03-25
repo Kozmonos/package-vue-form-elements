@@ -1,6 +1,10 @@
 <template>
   <a :href="to">
-    <button v-on="$listeners" :class="'bg-' + variant + ' ' + theme">
+    <button
+      class="go-button"
+      v-on="$listeners"
+      :class="'bg-' + variant + ' ' + theme"
+    >
       <span class="text"><slot /></span>
       <div class="icon-container">
         <div class="icon icon--left">
@@ -43,7 +47,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "bootstrap/scss/bootstrap.scss";
 a {
   text-decoration: none !important;
   display: block;
@@ -109,20 +112,6 @@ button::after {
   border-radius: var(--height);
   z-index: 1;
   transition: transform 500ms ease;
-}
-@each $color, $value in $theme-colors {
-  button.bg-#{$color}::after {
-    background-color: ($value);
-  }
-  $darkenColorBG: darken($value, 6%);
-  $lightenColor: lighten($value, 6%);
-
-  button.dark.bg-#{$color} {
-    background-color: ($lightenColor) !important;
-  }
-  button.light.bg-#{$color} {
-    background-color: ($darkenColorBG) !important;
-  }
 }
 
 button:hover::after {

@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import { KButton, KGoButton } from "../dist/ui.common.js";
+import { KButton, KGoButton } from "../dist/form-elements.common.js";
 export default {
   components: { KButton, KGoButton },
 };

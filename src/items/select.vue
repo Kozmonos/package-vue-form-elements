@@ -2,7 +2,7 @@
   <div
     v-on="$listeners"
     class="custom-select"
-    :class="open ? 'open' : ''"
+    :class="(open ? 'open' : '') + ' ' + theme"
     tabindex="0"
     @blur="open = false"
   >
@@ -34,7 +34,9 @@
       <div
         v-for="(option, i) of options"
         :key="i"
-        :class="option == selected ? 'selected-item bg-' + variant : ''"
+        :class="
+          option == selected ? 'selected-item text-light bg-' + variant : ''
+        "
         @click="
           selected = option;
           open = false;
@@ -91,7 +93,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../node_modules/bootstrap/scss/bootstrap";
 .custom-select {
   position: relative;
   width: 170px;
@@ -165,12 +166,6 @@ export default {
   user-select: none;
 }
 
-@each $color, $value in $theme-colors {
-  .custom-select .items.#{$color} div:not(.selected-item):hover {
-    background-color: lighten($value, 10%);
-  }
-}
-
 // .custom-select .items.bg-dark div:not(.selected-item):hover {
 //   /* background-color: #ad8225; */
 //   filter: brightness(0.5);
@@ -182,5 +177,8 @@ export default {
 
 .selectHide {
   display: none;
+}
+.custom-select .items div:not(.selected-item):hover {
+  color: white;
 }
 </style>

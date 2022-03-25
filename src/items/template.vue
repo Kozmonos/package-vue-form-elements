@@ -102,6 +102,6 @@ label {
 }
 
 .form-field__textarea {
-  height: 150px;
+  height: 80px;
 }
 </style>

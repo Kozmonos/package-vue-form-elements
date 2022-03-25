@@ -13,7 +13,7 @@ module.exports = {
 	},
 	pages: {
 		index: {
-			entry: 'src/' + (process.env.NODE_ENV === 'production-test' ? "main-test.js" : "main.js"),
+			entry: 'src/' + (process.env.NODE_ENV === 'production-test' ? 'main-production-test.js' : process.env.NODE_ENV === 'production' ? 'main-production.js' : 'main.js'),
 		}
 	}
 }
