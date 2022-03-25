@@ -1,5 +1,14 @@
-
 # Form elements
+
+It's a vue form element package.
+
+### IMPORTANT
+
+After installation you have to import selected css files.
+```js
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+```
 
 ## Input
 ![input](.images/input.png)
@@ -17,14 +26,14 @@
 ### Usage
 ```html
 <template>
-	<k-input label="test" theme="dark" variant="danger"/>
+<k-input label="test" theme="dark" variant="danger"/>
 </template>
 <script>
-	import { KInput } from "@kozmonos/form-elements";
+import { KInput } from "@kozmonos/form-elements";
 
-	export default {
-		components: { KInput }
-	}
+export default {
+	components: { KInput }
+}
 </script>
 ```
 
@@ -44,14 +53,14 @@
 ### Usage
 ```html
 <template>
-	<k-textarea label="test" theme="dark" variant="danger"/>
+<k-textarea label="test" theme="dark" variant="danger"/>
 </template>
 <script>
-	import { KTextarea } from "@kozmonos/form-elements";
+import { KTextarea } from "@kozmonos/form-elements";
 
-	export default {
-		components: { KTextarea }
-	}
+export default {
+	components: { KTextarea }
+}
 </script>
 ```
 
@@ -71,14 +80,14 @@
 
 ```html
 <template>
-	<k-checkbox :value="true" theme="dark" variant="danger"/>
+<k-checkbox :value="true" theme="dark" variant="danger"/>
 </template>
 <script>
-	import { KCheckbox } from "@kozmonos/form-elements";
+import { KCheckbox } from "@kozmonos/form-elements";
 
-	export default {
-		components: { KCheckbox }
-	}
+export default {
+	components: { KCheckbox }
+}
 </script>
 ```
 
@@ -98,14 +107,14 @@
 
 ```html
 <template>
-	<k-select :options="['item 1','item 2','item 3']" value="item 2" theme="dark" variant="danger"/>
+<k-select :options="['item 1','item 2','item 3']" value="item 2" theme="dark" variant="danger"/>
 </template>
 <script>
-	import { KSelect } from "@kozmonos/form-elements";
+import { KSelect } from "@kozmonos/form-elements";
 
-	export default {
-		components: { KSelect }
-	}
+export default {
+	components: { KSelect }
+}
 </script>
 ```
 
@@ -123,14 +132,14 @@
 
 ```html
 <template>
-	<k-button variant="danger">button string</k-button>
+<k-button variant="danger">button string</k-button>
 </template>
 <script>
-	import { KButton } from "@kozmonos/form-elements";
+import { KButton } from "@kozmonos/form-elements";
 
-	export default {
-		components: { KButton }
-	}
+export default {
+	components: { KButton }
+}
 </script>
 ```
 
@@ -149,13 +158,13 @@
 
 ```html
 <template>
-	<k-go-button variant="danger">button string</k-go-button>
+<k-go-button variant="danger">button string</k-go-button>
 </template>
 <script>
-	import { KGoButton } from "@kozmonos/form-elements";
+import { KGoButton } from "@kozmonos/form-elements";
 
-	export default {
-		components: { KGoButton }
-	}
+export default {
+	components: { KGoButton }
+}
 </script>
 ```
