@@ -1,9 +1,7 @@
 <template>
   <div class="cntr">
     <input
-      :checked="text ? text : value"
       v-on="$listeners"
-      @change="checked($event)"
       class="inp-cbx"
       :id="'checkbox-' + this._uid"
       type="checkbox"
@@ -28,18 +26,16 @@
   </div>
 </template>
 <script>
-import vModel from "./vModel.mixin.js";
 export default {
-  mixins: [vModel],
   data() {
     return {
       hoverBorder: "",
       checkedBg: "",
-      checkedData: this.value ? this.value : this.text,
+      checkedData: this.value,
     };
   },
   created() {
-    this.checkedData != "" ? this.updateVariant() : "";
+    if (this.value) this.updateVariant();
   },
   methods: {
     hover() {
@@ -48,12 +44,15 @@ export default {
     updateVariant() {
       this.checkedBg = `border border-${this.variant} bg-` + this.variant;
     },
-    checked(e) {
-      if (this.checkedData) {
-        this.$emit("update", true);
+  },
+  watch: {
+    value() {
+      this.checkedData = this.value;
+      if (this.value) {
+        this.$emit("input", true);
         this.updateVariant();
       } else {
-        this.$emit("update", false);
+        this.$emit("input", false);
         this.checkedBg = "";
       }
     },
@@ -68,7 +67,6 @@ export default {
       default: "dark",
     },
     value: {
-      type: Boolean,
       default: false,
     },
   },

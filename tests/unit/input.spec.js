@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { expect } from "chai";
-import KInput from '../../src/items/input.vue'
+import KInput from '../../src/items/input/input.vue'
 describe("Input", function () {
 
 	it("variant", () => {

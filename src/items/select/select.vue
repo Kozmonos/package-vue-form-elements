@@ -72,11 +72,7 @@ export default {
   },
   data() {
     return {
-      selected: this.value
-        ? this.value
-        : this.options && this.options.length > 0
-        ? this.options[0]
-        : null,
+      selected: this.getSelectedData(),
       open: false,
     };
   },
@@ -84,6 +80,12 @@ export default {
     this.$emit("input", this.selected);
   },
   methods: {
+    getSelectedData() {
+      if (this.value) {
+        return this.value;
+      }
+      return this.options && this.options.length > 0 ? this.options[0] : null;
+    },
     getThemeOpposite(type = "text") {
       const theme = this.theme == "dark" ? "light" : "dark";
       return type + "-" + theme;
@@ -100,7 +102,6 @@ export default {
   outline: none;
   height: 35px;
   line-height: 35px;
-  box-shadow: unset;
   border: 0 !important;
   box-shadow: unset !important;
 }
@@ -120,9 +121,9 @@ export default {
   top: 0;
 }
 
-.custom-select .selected.open {
-  border-radius: 6px 6px 0px 0px;
-}
+// .custom-select .selected.open {
+//   border-radius: 6px 6px 0px 0px;
+// }
 
 .custom-select .selected:after {
   position: absolute;
@@ -155,8 +156,7 @@ export default {
   top: 34px;
 }
 .custom-select .selected.open {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: 6px 6px 0px 0px;
 }
 
 .custom-select .items div {

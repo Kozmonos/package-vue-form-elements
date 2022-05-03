@@ -14,9 +14,8 @@ export default {
 				this.activeTextColor = "unset";
 				const label = el.target.parentNode.children[0];
 				if (label.attributes.hasOwnProperty("data-required")) {
-					label.attributes["data-required"].value == "true"
-						? label.classList.add("required")
-						: "";
+					if (label.attributes["data-required"].value == "true")
+						label.classList.add("required")
 				}
 			}
 		},

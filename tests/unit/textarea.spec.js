@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { expect } from "chai";
-import KTextarea from '../../src/items/textarea.vue'
+import KTextarea from '../../src/items/textarea/textarea.vue'
 describe("Textarea", function () {
 
 	it("variant", () => {

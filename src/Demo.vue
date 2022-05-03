@@ -1,5 +1,12 @@
 <template>
   <div class="main-container">
+    <k-checkbox theme="black" :value="false" />
+    <!--  -->
+    <div v-for="(tData, index) in testData" :key="index + 'c'">
+      {{ testData[index].value }}
+      <k-checkbox theme="black" v-model="testData[index].value" />
+      <button @click="testDelete(index)">delete</button>
+    </div>
     <template v-for="themeName in Object.keys(themes)">
       <div :class="themeName" :key="themeName + 'input'" class="container">
         <div
@@ -11,7 +18,6 @@
             >{{ themeName }} Mode</span
           >
           <component
-            :hover="hover"
             :is="componentItem"
             v-for="variantName in Object.keys(variants)"
             :key="variantName + componentItem"
@@ -40,6 +46,7 @@ import {
 export default {
   components: { KGoButton, KButton, KSelect, KInput, KTextarea, KCheckbox },
   data: () => ({
+    testData: [{ value: true }, { value: false }, { value: false }],
     componentList: {
       KGoButton: {
         slot: "Go",
@@ -67,6 +74,11 @@ export default {
       info: "info",
     },
   }),
+  methods: {
+    testDelete(index) {
+      this.testData.splice(index, 1);
+    },
+  },
 };
 </script>
 <style >

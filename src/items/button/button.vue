@@ -9,6 +9,7 @@
   </button>
 </template>
 <script>
+import "./button.css";
 export default {
   name: "k-button",
   props: {
@@ -19,13 +20,3 @@ export default {
   },
 };
 </script>
-
-<style scoped lang="scss">
-button {
-  border: 0;
-  border-radius: 10px;
-  color: white;
-  padding: 10px 20px;
-  transition: all 0.3s;
-}
-</style>

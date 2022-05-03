@@ -1,3 +1,9 @@
+function getIndexEntry() {
+	if (process.env.NODE_ENV === 'production-test') {
+		return 'main-production-test.js';
+	}
+	return process.env.NODE_ENV === 'production' ? 'main-production.js' : 'main.js';
+}
 module.exports = {
 	chainWebpack: (config) => {
 		if (process.env.NODE_ENV === 'test') {
@@ -13,7 +19,7 @@ module.exports = {
 	},
 	pages: {
 		index: {
-			entry: 'src/' + (process.env.NODE_ENV === 'production-test' ? 'main-production-test.js' : process.env.NODE_ENV === 'production' ? 'main-production.js' : 'main.js'),
+			entry: 'src/' + getIndexEntry(),
 		}
 	}
 }

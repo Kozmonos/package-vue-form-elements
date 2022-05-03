@@ -2,7 +2,28 @@
 
 It's a vue form element package.
 
-### IMPORTANT
+<a href="https://sonarcloud.io/summary/new_code?id=Kozmonos_package-vue-form-elements">
+	<img width="200" src="https://sonarcloud.io/images/project_badges/sonarcloud-white.svg" alt="SonarCloud"/>
+</a>
+
+<br/>
+<br/>
+
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Kozmonos_package-vue-form-elements&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Kozmonos_package-vue-form-elements)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Kozmonos_package-vue-form-elements&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Kozmonos_package-vue-form-elements)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Kozmonos_package-vue-form-elements&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Kozmonos_package-vue-form-elements)
+
+![CircleCI](https://img.shields.io/circleci/build/gh/Kozmonos/package-vue-form-elements?style=flat-square)
+![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/onuraycicek_storybook-test?server=https%3A%2F%2Fsonarcloud.io&style=flat-square)
+![Sonar Coverage](https://img.shields.io/sonar/coverage/Kozmonos_package-vue-form-elements?server=http%3A%2F%2Fsonarcloud.io&style=flat-square)
+
+
+
+[![npm version](https://img.shields.io/npm/v/@kozmonos/form-elements?style=flat-square)](https://www.npmjs.com/package/@kozmonos/form-elements)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@kozmonos/form-elements?style=flat-square)
+
+
+## BEFORE USAGE 
 
 After installation you have to import selected css files.
 ```js
@@ -10,161 +31,25 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 ```
 
-## Input
-![input](.images/input.png)
+## Package
 
-### Props
+[![Npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/@kozmonos/form-elements)
 
-| Name | Description     | type | default | required |
-| :-------- | :------- | :-----| :---- | -- |
-| label | input label text | String | - | true |
-| required | if true append * to the beginning of input element | Boolean | false | false |
-| value | input value | String | - | false |
-| theme | input theme | String | light | false |
-| variant | input color | String | primary | false |
+## Documentation
 
-### Usage
-```html
-<template>
-<k-input label="test" theme="dark" variant="danger"/>
-</template>
-<script>
-import { KInput } from "@kozmonos/form-elements";
+[![Storybook](https://img.shields.io/badge/storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)](https://master--626e63bb3e6c25004ac0bcb1.chromatic.com)
 
-export default {
-	components: { KInput }
-}
-</script>
-```
 
-## Textarea
-![textarea](.images/textarea.png)
+## Support us
 
-### Props
+[![Patreon](https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/kozmonos)
+[![Buy Me A Coffe](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/kozmonos)
+[![Kofi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/kozmonos)
+[![Liberapay](https://img.shields.io/badge/Liberapay-F6C915?style=for-the-badge&logo=liberapay&logoColor=black)](https://liberapay.com/kozmonos/donate)
+[![Github Sponsor](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)](https://github.com/sponsors/Kozmonos)
+![Open Collective](https://img.shields.io/badge/OpenCollective-1F87FF?style=for-the-badge&logo=OpenCollective&logoColor=white)
 
-| Name | Description     | type | default | required |
-| :-------- | :------- | :-----| :---- | -- |
-| label | textarea label text | String | - | true |
-| required | if true append * to the beginning of textarea element | Boolean | false | false |
-| value | textarea value | String | - | false |
-| theme | textarea theme | String | light | false |
-| variant | textarea color | String | primary | false |
+## Communicate
 
-### Usage
-```html
-<template>
-<k-textarea label="test" theme="dark" variant="danger"/>
-</template>
-<script>
-import { KTextarea } from "@kozmonos/form-elements";
-
-export default {
-	components: { KTextarea }
-}
-</script>
-```
-
-## Checkbox
-
-![checkbox](.images/checkbox.png)
-
-### Props
-
-| Name | Description     | type | default | required |
-| :-------- | :------- | :-----| :---- | -- |
-| value | checkbox value | String | - | false |
-| theme | checkbox theme | String | dark | false |
-| variant | checkbox color | String | primary | false |
-
-### Usage
-
-```html
-<template>
-<k-checkbox :value="true" theme="dark" variant="danger"/>
-</template>
-<script>
-import { KCheckbox } from "@kozmonos/form-elements";
-
-export default {
-	components: { KCheckbox }
-}
-</script>
-```
-
-## Select
-![select](.images/select.png)
-
-### Props
-
-| Name | Description     | type | default | required |
-| :-------- | :------- | :-----| :---- | -- |
-| value | select value | String | null | false |
-| options | select options | Array | - | true |
-| theme | select theme | String | dark | false |
-| variant | select color | String | primary | false |
-
-### Usage
-
-```html
-<template>
-<k-select :options="['item 1','item 2','item 3']" value="item 2" theme="dark" variant="danger"/>
-</template>
-<script>
-import { KSelect } from "@kozmonos/form-elements";
-
-export default {
-	components: { KSelect }
-}
-</script>
-```
-
-## Button
-
-![button](.images/button.png)
-
-### Props
-
-| Name | Description     | type | default | required |
-| :-------- | :------- | :-----| :---- | -- |
-| variant | select color | String | primary | false |
-
-### Usage
-
-```html
-<template>
-<k-button variant="danger">button string</k-button>
-</template>
-<script>
-import { KButton } from "@kozmonos/form-elements";
-
-export default {
-	components: { KButton }
-}
-</script>
-```
-
-## Go button
-![go-button](.images/go-button.png)
-
-### Props
-
-| Name | Description     | type | default | required |
-| :-------- | :------- | :-----| :---- | -- |
-| to | Href link | String | - | false |
-| variant | select color | String | primary | false |
-| theme | select theme | String | dark | false |
-
-### Usage
-
-```html
-<template>
-<k-go-button variant="danger">button string</k-go-button>
-</template>
-<script>
-import { KGoButton } from "@kozmonos/form-elements";
-
-export default {
-	components: { KGoButton }
-}
-</script>
-```
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/kozmonos)
+[![Mail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:opensource@kozmonos.com)

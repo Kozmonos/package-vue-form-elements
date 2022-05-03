@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import { expect } from "chai";
-import KGoButton from '../../src/items/go-button.vue'
+import KGoButton from '../../src/items/go-button/go-button.vue'
 describe("Go Button", function () {
 
 	it("variant", () => {

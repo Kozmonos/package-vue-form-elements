@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import { expect } from "chai";
-import KCheckbox from '../../src/items/checkbox.vue'
+import KCheckbox from '../../src/items/checkbox/checkbox.vue'
 describe("Checkbox", function () {
 
 
@@ -64,7 +64,17 @@ describe("Checkbox", function () {
 			}
 		});
 
-		expect(wrapper.vm.checkedData).to.equal("")
+		expect(wrapper.vm.checkedData).to.equal(false)
+		expect(wrapper.find("input").element.checked).to.equal(false)
+	})
+
+	it("value default(false)", () => {
+		const wrapper = shallowMount(KCheckbox, {
+			propsData: {
+			}
+		});
+
+		expect(wrapper.vm.checkedData).to.equal(false)
 		expect(wrapper.find("input").element.checked).to.equal(false)
 	})
 

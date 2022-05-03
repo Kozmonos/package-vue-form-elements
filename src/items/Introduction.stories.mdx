@@ -1,0 +1,54 @@
+<Meta title="Introduction" />
+
+<style>{`
+  .container{
+    margin-top: 20px;
+  }
+  .description{
+    margin:30px 0;
+  }
+  
+`}</style>
+
+# Form Elements
+
+<div className="description">It's a vue form element package.</div>
+
+## Installation
+
+<div className="container">
+
+<span>1. install package</span>
+
+```bash
+npm i @kozmonos/form-elements
+```
+
+<span>2. import globally bootstrap css files</span>
+
+```javascript
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+```
+
+</div>
+
+## Usage
+
+```html
+<template>
+  <div>
+    <k-button>test</k-button>
+    <k-input label="test" />
+  </div>
+</template>
+<script>
+  import { KButton, KInput } from "@kozmonos/form-elements";
+  export default {
+    components: {
+      KButton,
+      KInput,
+    },
+  };
+</script>
+```

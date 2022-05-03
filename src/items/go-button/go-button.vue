@@ -1,5 +1,5 @@
 <template>
-  <a :href="to">
+  <a :href="escapeHtml(to)">
     <button
       class="go-button"
       v-on="$listeners"
@@ -30,6 +30,17 @@
   </a>
 </template>
 <script>
+const entityMap = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;",
+  "/": "&#x2F;",
+  "`": "&#x60;",
+  "=": "&#x3D;",
+};
+
 export default {
   props: {
     variant: {
@@ -42,6 +53,13 @@ export default {
     },
     to: {
       type: String,
+    },
+  },
+  methods: {
+    escapeHtml(string) {
+      return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+        return entityMap[s];
+      });
     },
   },
 };
@@ -61,7 +79,6 @@ button {
   min-height: var(--height);
   border-radius: var(--height);
   color: #fff;
-  font-family: "Montserrat";
   font-weight: bold;
   cursor: pointer;
   overflow: hidden;
