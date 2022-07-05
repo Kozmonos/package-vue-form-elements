@@ -23,7 +23,7 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "dev:production": "webpack-dev-server --inline --progress --config build/webpack.prod.dev.conf.js",
     "start": "npm run dev",
-    "unit": "cross-env BABEL_ENV=test CHROME_BIN=/usr/bin/google-chrome  karma start './test/unit/karma.conf.js' --single-run",
+    "unit": "cross-env BABEL_ENV=test CHROME_BIN=/usr/bin/google-chrome  karma start test/unit/karma.conf.js --capture-timeout=100000 --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build:normal": "node build/build.js",
