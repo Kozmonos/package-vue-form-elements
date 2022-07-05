@@ -8,7 +8,6 @@ import BuildTest from './production.vue'
 
 Vue.config.productionTip = false
 
-console.log('dev')
 new Vue({
   render: h => h(BuildTest)
 }).$mount('#app')

@@ -1,7 +1,6 @@
 import ComponentItem from './select.vue'
 
 const { Template, argTypes, ...defaultBindingStory } = require('../storybook.template.js')({ ComponentItem, variant: true, theme: true })
-console.log({ argTypes })
 export default {
   title: 'Select',
   component: ComponentItem,
