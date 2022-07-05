@@ -13,15 +13,15 @@
   </div>
 </template>
 <script>
-import templateMixin from "./template.mixin.js";
+import templateMixin from './template.mixin.js'
 export default {
   mixins: [templateMixin],
   props: {
     id: {
-      required: true,
-    },
-  },
-};
+      required: true
+    }
+  }
+}
 </script>
 
 <style scoped>

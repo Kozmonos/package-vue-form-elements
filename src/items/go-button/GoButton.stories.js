@@ -1,16 +1,24 @@
-import ComponentItem from './checkbox.vue'
+import ComponentItem from './go-button.vue'
 
 const { Template, argTypes, ...defaultBindingStory } = require('../storybook.template.js')({ ComponentItem, variant: true, theme: true })
 
 export default {
-  title: 'Checkbox',
+  title: 'Go Button',
   component: ComponentItem,
   argTypes: {
-    ...argTypes
+    ...argTypes,
+    to: {
+      description: 'The url to navigate to',
+      control: {
+        type: 'text'
+      }
+    }
   },
   args: {
-    default: 'A Button Label'
-  }
+    default: 'Button'
+
+  },
+  parameters: { controls: { sort: 'requiredFirst' } }
 }
 
 export const { primary, secondary, success, danger, warning, info } = defaultBindingStory

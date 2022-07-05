@@ -1,12 +1,5 @@
 <template>
   <div class="main-container">
-    <k-checkbox theme="black" :value="false" />
-    <!--  -->
-    <div v-for="(tData, index) in testData" :key="index + 'c'">
-      {{ testData[index].value }}
-      <k-checkbox theme="black" v-model="testData[index].value" />
-      <button @click="testDelete(index)">delete</button>
-    </div>
     <template v-for="themeName in Object.keys(themes)">
       <div :class="themeName" :key="themeName + 'input'" class="container">
         <div
@@ -41,45 +34,48 @@ import {
   KSelect,
   KInput,
   KTextarea,
-  KCheckbox,
-} from "./main-production.js";
+  KCheckbox
+} from './elements.js'
 export default {
   components: { KGoButton, KButton, KSelect, KInput, KTextarea, KCheckbox },
   data: () => ({
     testData: [{ value: true }, { value: false }, { value: false }],
     componentList: {
       KGoButton: {
-        slot: "Go",
+        slot: 'Go',
+        props: {
+          to: 'https://kozmonos.com'
+        }
       },
-      KButton: { slot: "button" },
+      KButton: { slot: 'button' },
       KSelect: {
         props: {
-          options: ["item 1", "item 2", "item 3"],
-        },
+          options: ['item 1', 'item 2', 'item 3']
+        }
       },
       KInput: {},
       KTextarea: {},
-      KCheckbox: { slot: "checkbox" },
+      KCheckbox: { slot: 'checkbox' }
     },
     themes: {
-      dark: "dark",
-      light: "light",
+      dark: 'dark',
+      light: 'light'
     },
     variants: {
-      primary: "primary",
-      secondary: "secondary",
-      success: "success",
-      danger: "danger",
-      warning: "warning",
-      info: "info",
-    },
+      primary: 'primary',
+      secondary: 'secondary',
+      success: 'success',
+      danger: 'danger',
+      warning: 'warning',
+      info: 'info'
+    }
   }),
   methods: {
-    testDelete(index) {
-      this.testData.splice(index, 1);
-    },
-  },
-};
+    testDelete (index) {
+      this.testData.splice(index, 1)
+    }
+  }
+}
 </script>
 <style >
 .main-container {

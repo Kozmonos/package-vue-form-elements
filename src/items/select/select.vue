@@ -35,7 +35,7 @@
         v-for="(option, i) of options"
         :key="i"
         :class="
-          option == selected ? 'selected-item text-light bg-' + variant : ''
+          option === selected ? 'selected-item text-light bg-' + variant : ''
         "
         @click="
           selected = option;
@@ -51,50 +51,50 @@
 
 <script>
 export default {
-  name: "k-select",
+  name: 'k-select',
   props: {
     value: {
       type: String,
-      default: null,
+      default: null
     },
     options: {
       type: Array,
-      required: true,
+      required: true
     },
     variant: {
       type: String,
-      default: "primary",
+      default: 'primary'
     },
     theme: {
       type: String,
-      default: "dark",
-    },
+      default: 'dark'
+    }
   },
-  data() {
+  data () {
     return {
       selected: this.getSelectedData(),
-      open: false,
-    };
+      open: false
+    }
   },
-  mounted() {
-    this.$emit("input", this.selected);
+  mounted () {
+    this.$emit('input', this.selected)
   },
   methods: {
-    getSelectedData() {
+    getSelectedData () {
       if (this.value) {
-        return this.value;
+        return this.value
       }
-      return this.options && this.options.length > 0 ? this.options[0] : null;
+      return this.options && this.options.length > 0 ? this.options[0] : null
     },
-    getThemeOpposite(type = "text") {
-      const theme = this.theme == "dark" ? "light" : "dark";
-      return type + "-" + theme;
-    },
-  },
-};
+    getThemeOpposite (type = 'text') {
+      const theme = this.theme === 'dark' ? 'light ' : 'dark'
+      return type + '-' + theme
+    }
+  }
+}
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .custom-select {
   position: relative;
   width: 170px;
@@ -110,7 +110,7 @@ export default {
 }
 
 .custom-select .selected {
-  // border-radius: 6px;
+  /* border-radius: 6px;*/
   /* color: #fff; */
   padding-left: 1em;
   cursor: pointer;
@@ -121,9 +121,9 @@ export default {
   top: 0;
 }
 
-// .custom-select .selected.open {
-//   border-radius: 6px 6px 0px 0px;
-// }
+/* .custom-select .selected.open {
+   border-radius: 6px 6px 0px 0px;
+} */
 
 .custom-select .selected:after {
   position: absolute;
@@ -166,14 +166,12 @@ export default {
   user-select: none;
 }
 
-// .custom-select .items.bg-dark div:not(.selected-item):hover {
-//   /* background-color: #ad8225; */
-//   filter: brightness(0.5);
-// }
-// .custom-select .items.bg-light div:not(.selected-item):hover {
-//   /* background-color: #ad8225; */
-//   filter: brightness(1.5);
-// }
+.custom-select .items.bg-dark div:not(.selected-item):hover {
+  filter: brightness(0.5);
+}
+.custom-select .items.bg-light div:not(.selected-item):hover {
+  filter: brightness(1.5);
+}
 
 .selectHide {
   display: none;

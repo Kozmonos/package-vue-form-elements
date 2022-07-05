@@ -19,9 +19,9 @@
   </app-template>
 </template>
 <script>
-import itemMixin from "../text.mixin.js";
-import vModel from "../vModel.mixin.js";
+import itemMixin from '../text.mixin.js'
+import vModel from '../vModel.mixin.js'
 export default {
-  mixins: [itemMixin, vModel],
-};
+  mixins: [itemMixin, vModel]
+}
 </script>

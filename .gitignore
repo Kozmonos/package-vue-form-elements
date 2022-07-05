@@ -1,5 +1,16 @@
-.nyc_output
+.DS_Store
+node_modules/
+/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/test/unit/coverage/
+package-lock.json
+
+# Editor directories and files
+.idea
 .vscode
-node_modules
-coverage
-dist
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

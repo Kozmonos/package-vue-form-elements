@@ -1,16 +1,16 @@
-import ComponentItem from './checkbox.vue'
+import ComponentItem from './select.vue'
 
 const { Template, argTypes, ...defaultBindingStory } = require('../storybook.template.js')({ ComponentItem, variant: true, theme: true })
-
+console.log({ argTypes })
 export default {
-  title: 'Checkbox',
+  title: 'Select',
   component: ComponentItem,
   argTypes: {
     ...argTypes
   },
   args: {
-    default: 'A Button Label'
+    default: 'Placeholder',
+    options: ['item 1', 'item 2', 'item 3']
   }
 }
-
 export const { primary, secondary, success, danger, warning, info } = defaultBindingStory

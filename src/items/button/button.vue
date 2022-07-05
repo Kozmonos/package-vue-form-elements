@@ -9,14 +9,16 @@
   </button>
 </template>
 <script>
-import "./button.css";
 export default {
-  name: "k-button",
+  name: 'k-button',
   props: {
     variant: {
       type: String,
-      default: "primary",
-    },
-  },
-};
+      default: 'primary'
+    }
+  }
+}
 </script>
+<style>
+  @import './button.css'
+</style>

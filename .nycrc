@@ -1,0 +1,19 @@
+{
+	"reporter": [
+		"lcov",
+		"text",
+		"html"
+	],
+	"all": true,
+	"exclude": [
+		"**/*.spec.js",
+		"**/*.stories.js",
+		"src/*.js"
+	],
+	"extension": [
+		".js"
+	],
+	"check-coverage": true,
+	"sourceMap": true,
+	"instrument": true
+}

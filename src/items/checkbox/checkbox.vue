@@ -27,52 +27,54 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
-      hoverBorder: "",
-      checkedBg: "",
-      checkedData: this.value,
-    };
+      hoverBorder: '',
+      checkedBg: '',
+      checkedData: this.value
+    }
   },
-  created() {
-    if (this.value) this.updateVariant();
+  created () {
+    if (this.value) this.updateVariant()
   },
   methods: {
-    hover() {
-      this.hoverBorder = "border border-" + this.variant;
+    hover () {
+      this.hoverBorder = 'border border-' + this.variant
     },
-    updateVariant() {
-      this.checkedBg = `border border-${this.variant} bg-` + this.variant;
-    },
+    updateVariant () {
+      this.checkedBg = `border border-${this.variant} bg-` + this.variant
+    }
   },
   watch: {
-    value() {
-      this.checkedData = this.value;
-      if (this.value) {
-        this.$emit("input", true);
-        this.updateVariant();
-      } else {
-        this.$emit("input", false);
-        this.checkedBg = "";
-      }
+    value () {
+      this.checkedData = this.value
     },
+    checkedData () {
+      if (this.checkedData) {
+        this.$emit('input', true)
+        this.updateVariant()
+      } else {
+        this.$emit('input', false)
+        this.checkedBg = ''
+      }
+    }
   },
   props: {
     variant: {
       type: String,
-      default: "primary",
+      default: 'primary'
     },
     theme: {
       type: String,
-      default: "dark",
+      default: 'dark'
     },
     value: {
-      default: false,
-    },
-  },
-};
+      default: false
+    }
+  }
+}
 </script>
-	<style scoped>
+<style scoped>
 * {
   box-sizing: border-box;
 }
@@ -124,9 +126,6 @@ export default {
 .cbx span:last-child {
   padding-left: 8px;
   line-height: 18px;
-}
-.cbx:hover span:first-child {
-  /* border-color: #07f; */
 }
 .inp-cbx {
   position: absolute;

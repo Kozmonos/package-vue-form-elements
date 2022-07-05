@@ -31,40 +31,40 @@
 </template>
 <script>
 const entityMap = {
-  "&": "&amp;",
-  "<": "&lt;",
-  ">": "&gt;",
-  '"': "&quot;",
-  "'": "&#39;",
-  "/": "&#x2F;",
-  "`": "&#x60;",
-  "=": "&#x3D;",
-};
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;',
+  '/': '&#x2F;',
+  '`': '&#x60;',
+  '=': '&#x3D;'
+}
 
 export default {
   props: {
     variant: {
       type: String,
-      default: "primary",
+      default: 'primary'
     },
     theme: {
       type: String,
-      default: "light",
+      default: 'light'
     },
     to: {
-      type: String,
-    },
+      type: String
+    }
   },
   methods: {
-    escapeHtml(string) {
-      return String(string).replace(/[&<>"'`=\/]/g, function (s) {
-        return entityMap[s];
-      });
-    },
-  },
-};
+    escapeHtml (string) {
+      return String(string).replace(/[<>"'`]/g, function (s) {
+        return entityMap[s]
+      })
+    }
+  }
+}
 </script>
-<style lang="scss" scoped>
+<style  scoped>
 a {
   text-decoration: none !important;
   display: block;
