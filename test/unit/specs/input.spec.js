@@ -70,8 +70,6 @@ describe('Input', function () {
     expect(wrapper.find('input').element.value).to.equal(oldInputData)
     wrapper.find('input').setValue(newInputData)
     await wrapper.vm.$nextTick()
-    console.log(wrapper.emitted())
-    console.log(wrapper.emitted().update)
     expect(wrapper.emitted().update.length).to.equal(1)
     expect(wrapper.emitted().update[0][0]).to.equal(newInputData)
   })

@@ -75,7 +75,6 @@ const setVariants = (Template) => {
     }
   }
 
-  console.log({ variants })
   return [variants, argTypes]
 }
 

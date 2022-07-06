@@ -4,9 +4,7 @@
   </div>
 </template>
 <script>
-// import { KButton } from '../dist/form-elements.common.js'
 import { KButton } from '../dist/lib/form-elements.min.js'
-console.log({KButton})
 export default {
   components: { KButton }
 }

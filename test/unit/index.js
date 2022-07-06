@@ -11,5 +11,3 @@ testsContext.keys().forEach(testsContext)
 // you want coverage for.
 const srcContext = require.context('../../src', true, /^.\/(?!(main|(.*?).mixin)(\.js)|(production|Demo|template)\.vue$)(.*?).vue/)
 srcContext.keys().forEach(srcContext)
-console.log('srcContext:', srcContext.keys().forEach(srcContext))
-console.log('srcContext:', srcContext.keys())
