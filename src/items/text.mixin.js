@@ -18,7 +18,6 @@ export default {
       }
     },
     focused (el) {
-      // const target = el.target !== '' ? el.target.parentNode.parentNode : el.parentNode.parentNode
       const target = el.target.parentNode.parentNode
       target.classList.add('form-field--is-active')
       this.activeTextColor = this.color

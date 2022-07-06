@@ -2,7 +2,6 @@ import Vue from 'vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-// import '../dist/lib/form-elements.min.css'
 
 import BuildTest from './production.vue'
 
