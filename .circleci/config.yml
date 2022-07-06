@@ -105,14 +105,14 @@ workflows:
               - install_dependencies
           filters:
                 branches:
-                  ignore: main
+                  ignore: master
           <<: *slack-fail-post-step
       - codequality:
           requires:
               - test_and_coverage
           filters:
                 branches:
-                  ignore: main
+                  ignore: master
           <<: *slack-fail-post-step
       - storybook:
           requires:
@@ -120,7 +120,7 @@ workflows:
           filters:
                 branches:
                   only:
-                    - main
+                    - master
           <<: *slack-fail-post-step
       - npmjs:
           requires:
@@ -128,5 +128,5 @@ workflows:
           filters:
              branches:
                only:
-                 - main
+                 - master
           <<: *slack-fail-success-post-step
