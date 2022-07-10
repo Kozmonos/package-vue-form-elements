@@ -3,7 +3,7 @@ import Vue from 'vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import BuildTest from './production.vue'
+import BuildTest from './production-test.vue'
 
 Vue.config.productionTip = false
 
