@@ -39,7 +39,7 @@ jobs:
       - checkout
       - restore_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: npm install
+      - run: npm install --legacy-peer-deps
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
           paths:
