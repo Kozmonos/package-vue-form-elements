@@ -58,13 +58,10 @@ jobs:
           command: npm test
       - run:
           name: List files
-          command: ls
-      - run:
-          name: cd
-          command: cd test/unit
+          command: ls -D test
       - run:
           name: List files
-          command: ls
+          command: ls -D test/unit
       - sonarcloud/scan
 
   storybook:
