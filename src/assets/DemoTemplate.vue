@@ -10,17 +10,12 @@
           <span class="mode-title" :class="'text-' + themeName"
             >{{ themeName }} Mode</span
           >
-          <component
-            :is="componentItem"
-            v-for="variantName in Object.keys(variants)"
-            :key="variantName + componentItem"
-            :theme="themeName"
-            class="component-item"
-            label="input label"
-            :variant="variantName"
-            v-bind="componentList[componentItem].props"
-            >{{ componentList[componentItem].slot }}</component
-          >
+         <slot name="content"
+						:componentItem="componentItem"
+						:variants="variants"
+						:themeName="themeName"
+						:componentList="componentList"
+				/>
           <hr :key="componentItem + 'hr'" />
         </div>
       </div>
@@ -28,16 +23,8 @@
   </div>
 </template>
 <script>
-import {
-  KGoButton,
-  KButton,
-  KSelect,
-  KInput,
-  KTextarea,
-  KCheckbox
-} from './elements.js'
+import './demo.css'
 export default {
-  components: { KGoButton, KButton, KSelect, KInput, KTextarea, KCheckbox },
   data: () => ({
     testData: [{ value: true }, { value: false }, { value: false }],
     componentList: {
@@ -77,28 +64,3 @@ export default {
   }
 }
 </script>
-<style >
-.main-container {
-  display: flex;
-}
-.component-item {
-  margin-top: 10px;
-}
-
-.container-item {
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 1px 1px 8px #343a4014;
-}
-.light .container-item {
-  background-color: #202020;
-}
-.mode-title {
-  text-transform: capitalize;
-  font-weight: bold;
-}
-</style>

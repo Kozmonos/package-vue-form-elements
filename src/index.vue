@@ -1,5 +1,5 @@
 <template>
-  <demo-template>
+   <demo-template>
     <template v-slot:content="{componentItem,variants,themeName,componentList}">
      <component
             :is="componentItem"
@@ -24,7 +24,7 @@ import {
   KInput,
   KTextarea,
   KCheckbox
-} from '../dist/lib/form-elements.min.js'
+} from './elements.js'
 import demoTemplate from './assets/DemoTemplate'
 export default {
   components: { KGoButton, KButton, KSelect, KInput, KTextarea, KCheckbox, demoTemplate }

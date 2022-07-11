@@ -1,4 +1,4 @@
-import './main.scss'
+import './assets/main.scss'
 export { default as KButton } from './items/button/button.vue'
 export { default as KGoButton } from './items/go-button/go-button.vue'
 export { default as KSelect } from './items/select/select.vue'
