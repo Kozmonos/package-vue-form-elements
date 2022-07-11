@@ -17,7 +17,7 @@ const defaultTemplate = (ComponentItem) => {
     props: Object.keys(argTypes),
     components: { 'app-component-item': ComponentItem },
     template: `
- <div :class="'bg-'+themeName" style="height:100vh;display:flex;justify-content:center;align-items:center;">
+ <div style="height:100vh;display:flex;justify-content:center;align-items:center;">
    <app-component-item v-bind="$props" >
      <template v-if="${'default' in args}" v-slot>${args.default}</template>
    </app-component-item>
