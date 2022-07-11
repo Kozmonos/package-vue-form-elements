@@ -56,12 +56,6 @@ jobs:
       - run:
           name: Run tests
           command: npm test
-      - run:
-          name: List files
-          command: ls -D test
-      - run:
-          name: List files
-          command: ls -D test/unit
       - sonarcloud/scan
 
   storybook:
