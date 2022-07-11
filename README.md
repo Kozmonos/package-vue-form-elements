@@ -42,7 +42,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 ## Development
 
-[![Open in Gitpod](https://img.shields.io/badge/gitpod-e96b0f.svg?style=for-the-badge&logo=gitpod&logoColor=white)](https://gitpod.io/#https://github.com/docsifyjs/docsify)
+[![Open in Gitpod](https://img.shields.io/badge/gitpod-e96b0f.svg?style=for-the-badge&logo=gitpod&logoColor=white)](https://gitpod.io/#https://github.com/Kozmonos/package-vue-form-elements)
 [![Open in CodeSandbox](https://img.shields.io/badge/codesandbox-0971f1.svg?style=for-the-badge&logo=codesandbox&logoColor=white)](https://githubbox.com/Kozmonos/package-vue-form-elements)
 
 
