@@ -28,6 +28,7 @@
     "lint": "eslint --ext .js,.vue src test/unit",
     "build:normal": "node build/build.js",
     "build:lib": "node build/build-lib.js",
+    "build": "npm run build:lib",
     "deploy": "custom-command github/push",
     "publish:major": "npm version major --no-git-tag-version;npm run deploy",
     "publish:minor": "npm version minor --no-git-tag-version;npm run deploy",
