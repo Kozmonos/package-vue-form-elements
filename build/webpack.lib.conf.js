@@ -3,7 +3,6 @@ var webpack = require('webpack')
 var config = require('../config')
 var { merge } = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
-// var ExtractTextPlugin = require('extract-text-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 
@@ -49,10 +48,6 @@ var webpackConfig = merge(baseWebpackConfig, {
         // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
       }
     }),
-    // extract css into its own file
-    // new ExtractTextPlugin({
-    //   filename: utils.assetsLibPath('[name].min.css')
-    // }),
     new MiniCssExtractPlugin({
       filename: utils.assetsLibPath('[name].css')
     }),
