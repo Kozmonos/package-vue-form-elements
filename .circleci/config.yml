@@ -30,7 +30,7 @@ slack-fail-success-post-step: &slack-fail-success-post-step
 defaults: &defaults
   working_directory: ~/repo
   docker:
-    - image: cimg/node:16.15.1-browsers
+    - image: cimg/node:14.16.0-browsers
 
 jobs:
   install_dependencies:
@@ -39,7 +39,7 @@ jobs:
       - checkout
       - restore_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: npm install
+      - run: npm install --legacy-peer-deps
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
           paths:
@@ -48,7 +48,7 @@ jobs:
           root: ~/repo
           paths:
             - '*'
-  test_and_coverage:
+  test_coverage_codequality:
     <<: *defaults
     steps:
       - attach_workspace:
@@ -56,16 +56,6 @@ jobs:
       - run:
           name: Run tests
           command: npm test
-      - persist_to_workspace:
-          root: .
-          paths:
-            - '*'
-
-  codequality:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/repo
       - sonarcloud/scan
 
   storybook:
@@ -100,16 +90,9 @@ workflows:
   test_build_deploy:
     jobs:
       - install_dependencies
-      - test_and_coverage:
+      - test_coverage_codequality:
           requires:
               - install_dependencies
-          filters:
-                branches:
-                  ignore: master
-          <<: *slack-fail-post-step
-      - codequality:
-          requires:
-              - test_and_coverage
           filters:
                 branches:
                   ignore: master

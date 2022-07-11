@@ -33,7 +33,7 @@ module.exports = function karmaConfig (config) {
     reporters: ['spec', 'coverage'],
     files: [
       './index.js',
-      {pattern: '../../src/**/*.mixin.js', included: false}
+      { pattern: '../../src/**/*.mixin.js', included: false }
     ],
     preprocessors: {
       './index.js': ['webpack', 'sourcemap'],

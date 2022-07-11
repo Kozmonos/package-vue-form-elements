@@ -1,5 +1,5 @@
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
 @each $color, $value in $theme-colors {
   button.button-item.#{$color}:hover {
     box-shadow: 1px 1px 4px $value;
