@@ -9,14 +9,14 @@ It's a vue form element package.
 <br/>
 <br/>
 
+
+
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Kozmonos_package-vue-form-elements&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Kozmonos_package-vue-form-elements)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Kozmonos_package-vue-form-elements&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Kozmonos_package-vue-form-elements)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Kozmonos_package-vue-form-elements&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Kozmonos_package-vue-form-elements)
 
 ![CircleCI](https://img.shields.io/circleci/build/gh/Kozmonos/package-vue-form-elements?style=flat-square)
-![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/onuraycicek_storybook-test?server=https%3A%2F%2Fsonarcloud.io&style=flat-square)
-![Sonar Coverage](https://img.shields.io/sonar/coverage/Kozmonos_package-vue-form-elements?server=http%3A%2F%2Fsonarcloud.io&style=flat-square)
-
+[![codecov](https://img.shields.io/codecov/c/github/Kozmonos/package-vue-form-elements?style=flat-square)](https://codecov.io/gh/Kozmonos/package-vue-form-elements)
 
 
 [![npm version](https://img.shields.io/npm/v/@kozmonos/form-elements?style=flat-square)](https://www.npmjs.com/package/@kozmonos/form-elements)
