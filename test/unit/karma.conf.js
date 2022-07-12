@@ -45,10 +45,14 @@ module.exports = function karmaConfig (config) {
     },
     coverageReporter: {
       dir: './coverage',
-      reporters: [
-        { type: 'lcov', subdir: '.' },
-        { type: 'text-summary' }
-      ]
+      file: 'cobertura-coverage.xml',
+      type: 'cobertura',
+      subdir: '.'
+      // reporters: [
+      //   // { type: 'lcov', subdir: '.' },
+      //   { type: 'text-summary' },
+      //   { type: 'cobertura' }
+      // ]
     },
     exclude: [
       '**/*.mixin.js'
