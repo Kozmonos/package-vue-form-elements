@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   slack: circleci/slack@4.3.0
-  sonarcloud: sonarsource/sonarcloud@1.0.3
+  codecov: codecov/codecov@3.2.3
 
 commands:
   notify_slack_error:
@@ -56,7 +56,8 @@ jobs:
       - run:
           name: Run tests
           command: npm test
-      - sonarcloud/scan
+      - codecov/upload:
+          file: './test/unit/coverage/cobertura-coverage.xml'
 
   storybook:
     <<: *defaults
